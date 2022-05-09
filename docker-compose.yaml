@@ -1,0 +1,16 @@
+version: '3.3'
+
+volumes: 
+  webflux_reactjs_demo_postgres_volume:
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: webfluxreactjsdemo
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - webflux_reactjs_demo_postgres_volume:/var/lib/postgresql/data
