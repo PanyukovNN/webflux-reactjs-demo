@@ -23,6 +23,7 @@ public class ArticleController {
     public Flux<List<Article>> findAll() {
         return articleService.findAll()
                 .buffer(2)
+                .take(5)
                 .delayElements(Duration.ofSeconds(2));
     }
 }
